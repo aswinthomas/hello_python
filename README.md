@@ -1,0 +1,1 @@
+A repository containing simple Python OOP concepts
