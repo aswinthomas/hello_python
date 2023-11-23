@@ -16,7 +16,8 @@ class Item:
 		self.name = name
 		self.price = price
 		self.quantity = quantity
-		print(f"Constructor called with name={self.name} price={self.price} quantity={self.quantity}")
+		print(
+			f"{self.__class__.__name__} constructor called with name={self.name} price={self.price} quantity={self.quantity}")
 
 		# Execution
 		Item.all.append(self)
@@ -52,4 +53,10 @@ class Item:
 
 	# Beautify return of instance
 	def __repr__(self):
-		return f"Item('{self.name}', {self.price}, {self.quantity})"
+		return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
+
+	@property
+	def read_only_name(self):
+		return name
+
+
