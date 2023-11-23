@@ -3,6 +3,9 @@ from methods import Item
 
 
 class Phone(Item):
+	# Overriding attributes from parent
+	pay_rate = 0.7
+
 	def __init__(self, name="test", price=1., quantity=1, broken_phones=0):
 		# Call super function to have access to all attributes and methods
 		super().__init__(

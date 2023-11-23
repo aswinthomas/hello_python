@@ -4,7 +4,6 @@ from inheritance import Phone
 def test_phone1():
 	phone = Phone(name="samsungNote10", price=500, quantity=5, broken_phones=1)
 	assert (phone.calculate_total_price() == 2500)
-	phone.pay_rate = 0.7
 	phone.apply_discount()
 	assert (phone.calculate_total_price() == 1750)
 

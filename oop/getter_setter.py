@@ -16,10 +16,10 @@ class Item:
 		# add _ to name since name is read-only now. THis way you can access externally as _name
 		# add __ to name, to make it private
 		self.__name = name
-		self.price = price
+		self.__price = price
 		self.quantity = quantity
 		print(
-			f"{self.__class__.__name__} constructor called with name={self.name} price={self.price} quantity={self.quantity}")
+			f"{self.__class__.__name__} constructor called with name={self.name} price={self.__price} quantity={self.quantity}")
 
 		# Execution
 		Item.all.append(self)
@@ -37,4 +37,15 @@ class Item:
 		else:
 			self.__name = val
 
+	@property
+	def price(self):
+		return self.__price
 
+	def calculate_total_price(self) -> float:
+		return self.__price * self.quantity
+
+	def apply_discount(self):
+		self.__price = self.__price * self.pay_rate
+
+	def apply_increment(self, val):
+		self.__price += self.__price * val
