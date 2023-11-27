@@ -45,43 +45,44 @@ Design patterns are well known solutions to recurring problems.
 ## Patterns
 
 <table>
-<thead>
-<tr>
-<th>Pattern</th>
-<th>When</th>
-<th>Components</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="vertical-align: top;"><strong>Factory</strong>: Instead of client code directly creating objects, it delegates responsibility to a Factory Method</td>
-<td style="vertical-align: top;"><ul><li>Decoupling client code from concrete classes</li><li>Flexibility of creation of object without specifying exact class</li><li>Extensibility by adding mew product classes</li></ul></td>
-<td style="vertical-align: top;"><ul><li>Product Interface: Defines an abstract class or interface for the product</li><li>Concrete Product: Implements concrete Products</li><li>Creator Interface:  Defines an abstract creator class or interface, which is essentially a method to create object of the Products.</li><li>Concrete Creator: Implements the creator, creating an instance of Product</li></ul></td>
-</tr>
-<tr>
-<td style="vertical-align: top;"><strong>Singleton</strong>: When you only want one object. Global methods and attributes using objects.</td>
-<td style="vertical-align: top;"><ul><li>Single Instance</li><li>Global Access</li><li>Resource Management: Helps manage resources that should be shred e.g. db connections</li></ul></td>
-<td style="vertical-align: top;"></td>
-</tr>
-<tr>
-<td style="vertical-align: top;"><strong>Builder</strong>: Solves situation of a telescoping constructor, which occurs when a developer builds a complex object using an excessive number of constructors</td>
-<td style="vertical-align: top;"></td>
-<td style="vertical-align: top;"><ul><li>Director: in charge of building a product</li><li>Abstract Builder: Interfaces needed to build an object</li><li>Concrete Builder: Inherits from abstract builder and implements the details for the specific product</li><li>Product: An object being built</li></ul></td>
-</tr>
-<tr>
-<td style="vertical-align: top;"><strong>Prototype</strong>: Useful when instantiating many identical objects could be expensive, instead clone them.</td>
-<td style="vertical-align: top;"></td>
-<td style="vertical-align: top;"><ul><li>Prototypical instance</li><li>Clone</li><ul></td>
-</tr>
-<tr>
-<td style="vertical-align: top;"><strong>Decorator</strong>: Add features to existing objects dynamically without changing structures</td>
-<td style="vertical-align: top;"></td>
-<td style="vertical-align: top;"><ul><li>Functions are objects in Py</li><li>Built in decorator feature</li></ul></td>
-</tr>
-<tr>
-<td style="vertical-align: top;"><strong>Proxy</strong>: To create a highly resource intensive object</td>
-<td style="vertical-align: top;"><ul><li>Postpone object creation unless absolutely necessary</li><li>Find a placeholder</li></ul></td>
-<td style="vertical-align: top;"><ul><li>Clients: wait to interact with a proxy</li><li>Proxy: Responsible for creating resource intensive Producer objects</li><li>Producer: resource intensive object</li></ul></td>
-</tr>
-</tbody>
+  <tr>
+    <th>Pattern</th>
+    <th>When</th>
+    <th>Components</th>
+  </tr>
+  <tr>
+    <td><strong>Factory</strong>: Instead of client code directly creating objects, it delegates responsibility to a Factory Method</td>
+    <td><ul><li>Decoupling client code from concrete classes</li><li>Flexibility of creation of object without specifying exact class</li><li>Extensibility by adding mew product classes</li></ul></td>
+    <td><ul><li>Product Interface: Defines an abstract class or interface for the product</li><li>Concrete Product: Implements concrete Products</li><li>Creator Interface:  Defines an abstract creator class or interface, which is essentially a method to create object of the Products.</li><li>Concrete Creator: Implements the creator, creating an instance of Product</li></ul></td>
+  </tr>
+  <tr>
+    <td><strong>Singleton</strong>: When you only want one object. Global methods and attributes using objects.</td>
+    <td><ul><li>Single Instance</li><li>Global Access</li><li>Resource Management: Helps manage resources that should be shred e.g. db connections</li></ul></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Builder</strong>: Solves situation of a telescoping constructor, which occurs when a developer builds a complex object using an excessive number of constructors</td>
+    <td></td>
+    <td><ul><li>Director: in charge of building a product</li><li>Abstract Builder: Interfaces needed to build an object</li><li>Concrete Builder: Inherits from abstract builder and implements the details for the specific product</li><li>Product: An object being built</li></ul></td>
+  </tr>
+  <tr>
+    <td><strong>Prototype</strong>: Useful when instantiating many identical objects could be expensive, instead clone them.</td>
+    <td></td>
+    <td><ul><li>Prototypical instance</li><li>Clone</li><ul></td>
+  </tr>
+  <tr>
+    <td><strong>Decorator</strong>: Add features to existing objects dynamically without changing structures</td>
+    <td></td>
+    <td><ul><li>Functions are objects in Py</li><li>Built in decorator feature</li></ul></td>
+  </tr>
+  <tr>
+    <td><strong>Proxy</strong>: To create a highly resource intensive object</td>
+    <td><ul><li>Postpone object creation unless absolutely necessary</li><li>Find a placeholder</li></ul></td>
+    <td><ul><li>Clients: wait to interact with a proxy</li><li>Proxy: Responsible for creating resource intensive Producer objects</li><li>Producer: resource intensive object</li></ul></td>
+  </tr>
+  <tr>
+    <td><strong>Adapter</strong>: Converts interface of a class to one that client is expecting</td>
+    <td></td>
+    <td>Translate method names</td>
+  </tr>
 </table>
