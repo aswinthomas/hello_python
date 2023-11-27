@@ -44,48 +44,11 @@ Design patterns are well known solutions to recurring problems.
 
 ## Patterns
 
-### Factory Pattern
-
-Instead of client code directly creating objects, it delegates responsibility to a Factory Method
-
-#### When to use?
-
-- When there are uncertainties in objects used
-- Decisions must be be made at runtime on what classes to use
-
-#### Benefits
-
-- Decoupling client code from concrete classes, reducing dependency
-- Flexibility of creation ofg object without specifying exact class
-- Extensibility by adding mew product classes
-
-#### Components
-
-- Product Interface: Defines an abstract class or interface for the product
-- Concrete Product: Implements concrete Products
-- Creator Interface:  Defines an abstract creator class or interface, which is essentially a method to create object of the Products.
-- Concrete Creator: Implements the creator, creating an instance of Product
-
-### Singleton Pattern
-
-When you only want one object. Global methods and attributes using objects.
-
-#### Benefits
-
-- Single Instance
-- Global Access
-- Resource Management: Helps manage rfesources that should be shred e.g. db connections
-
-
-### Builder Pattern
-
-A telescoping constructor occurs when a developer builds a complex object using an excessive number of constructors
-
-#### Components
-
-- Director: in charge of building a product
-- Abstract Builder: Interfaces needed to build an object
-- Concrete Builder: Inherits from abstract builder and implements the details for the specific product
-- product: An object being built
-
-
+| Pattern                                                                                                                                                     | When                                                                                                                                                                                        | Components                                                                                                                                                                                                                                                                                                                                                                       | 
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Factory**: Instead of client code directly creating objects, it delegates responsibility to a Factory Method                                              | <ul><li>Decoupling client code from concrete classes</li><li>Flexibility of creation of object without specifying exact class</li><li>Extensibility by adding mew product classes</li></ul> | <ul><li>Product Interface: Defines an abstract class or interface for the product</li><li>Concrete Product: Implements concrete Products</li><li>Creator Interface:  Defines an abstract creator class or interface, which is essentially a method to create object of the Products.</li><li>Concrete Creator: Implements the creator, creating an instance of Product</li></ul> |
+| **Singleton**: When you only want one object. Global methods and attributes using objects.                                                                  | <ul><li>Single Instance</li><li>Global Access</li><li>Resource Management: Helps manage resources that should be shred e.g. db connections</li></ul>                                        |                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Builder**: Solves situation of a telescoping constructor, which occurs when a developer builds a complex object using an excessive number of constructors |                                                                                                                                                                                             | <ul><li>Director: in charge of building a product</li><li>Abstract Builder: Interfaces needed to build an object</li><li>Concrete Builder: Inherits from abstract builder and implements the details for the specific product</li><li>Product: An object being built</li></ul>                                                                                                   |
+| **Prototype**: Useful when instantiating many identical objects could be expensive, instead clone them.                                                     |                                                                                                                                                                                             | <ul><li>Prototypical instance</li><li>Clone</li><ul>                                                                                                                                                                                                                                                                                                                             |
+| **Decorator**: Add features to existing objects dynamically without changing structures                                                                     |                                                                                                                                                                                             | <ul><li>Functions are objects in Py</li><li>Built in decorator feature</li></ul>                                                                                                                                                                                                                                                                                                 |
+| **Proxy**: To create a highly resource intensive object                                                                                                     | <ul><li>Postpone object creation unless absolutely necessary</li><li>Find a placeholder</li></ul>                                                                                           | <ul><li>Clients: wait to interact with a proxy</li><li>Proxy: Responsible for creating resource intensive Producer objects</li><li>Producer: resource intensive object</li></ul>                                                                                                                                                                                                 |
