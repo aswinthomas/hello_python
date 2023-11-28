@@ -1,4 +1,4 @@
-from factory import DogFactory, PetStore, get_pet
+from factory_pet import DogFactory, PetStore, get_pet
 
 
 def test_dog():

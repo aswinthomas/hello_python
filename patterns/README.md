@@ -51,8 +51,16 @@ Design patterns are well known solutions to recurring problems.
     <th>Components</th>
   </tr>
   <tr>
-    <td><strong>Factory</strong>: Instead of client code directly creating objects, it delegates responsibility to a Factory Method</td>
-    <ul><li>Decoupling client code from concrete classes</li><li>Flexibility of creation of object without specifying exact class</li><li>Extensibility by adding mew product classes</li></ul>
+    <td><strong>Factory</strong>: This is a creational pattern used to provide abstraction. Instead of client code 
+directly creating objects, it delegates responsibility to a Factory Method e.g. ordering a combo meal at a restaurant.
+      <ul>
+        <li>Decoupling client code from concrete classes. Placing redundant code e.g. create burger into a class and 
+calling it from multiple places would be 'Simple Factory', but then we would have to modify the class when new items 
+need to be added, and also would need to know the class type e.g. CheeseBurger meal when calling.</li>
+        <li>Flexibility of creation of object without specifying exact class</li>
+        <li>Extensibility by adding new product classes</li>
+      </ul>
+    </td>
     <td>
     <ul>
       <li>Library Frameworks: It’s commonly used in library frameworks, allowing developers to extend and customize the behavior of a library.</li>
@@ -60,10 +68,20 @@ Design patterns are well known solutions to recurring problems.
       <li>Testing: Factories can be used to create mock objects for unit testing.</li>
     </ul>
     </td>
-    <td><ul><li>Product Interface: Defines an abstract class or interface for the product</li><li>Concrete Product: Implements concrete Products</li><li>Creator Interface:  Defines an abstract creator class or interface, which is essentially a method to create object of the Products.</li><li>Concrete Creator: Implements the creator, creating an instance of Product</li></ul></td>
+    <td>
+      <ul>
+        <li>Product Interface: Defines an abstract class or interface for the product. For example, Burger.</li>
+        <li>Concrete Product: Implements concrete Products e.g. VeganBurger, CheeseBurger etc.</li>
+        <li>Creator Interface: Defines an abstract creator class or interface that has a FactoryMethod e.g. getBurger() 
+but without the implementation</li>
+        <li>Concrete Creator: Implements the creator and FactoryMethod e.g. CheeseBurgerCreator</li>
+      </ul>
+      Now when a new Burger type is added, the FactoryMethod in Creator Interface doesn't change.
+    </td>
   </tr>
   <tr>
-    <td><strong>Singleton</strong>: When you only want one object. Global methods and attributes using objects.</td>
+    <td><strong>Singleton</strong>: When you only want one object. Global methods and attributes using objects. This is 
+a <strong>creational pattern</strong>.</td>
     <td>
     <ul>
       <li>Database Connection Pools: Enhancing database interaction efficiency via a unified connection pool.</li>
@@ -75,27 +93,17 @@ Design patterns are well known solutions to recurring problems.
     <td></td>
   </tr>
   <tr>
-    <td><strong>Builder</strong>: Solves situation of a telescoping constructor, which occurs when a developer builds a complex object using an excessive number of constructors</td>
+    <td><strong>Builder</strong>: Solves situation of a telescoping constructor, which occurs when a developer builds a complex object using an excessive number of constructors. This is a <strong>creational pattern</strong>.</td>
     <td></td>
     <td><ul><li>Director: in charge of building a product</li><li>Abstract Builder: Interfaces needed to build an object</li><li>Concrete Builder: Inherits from abstract builder and implements the details for the specific product</li><li>Product: An object being built</li></ul></td>
   </tr>
   <tr>
-    <td><strong>Prototype</strong>: Useful when instantiating many identical objects could be expensive, instead clone them.</td>
-    <td></td>
-    <td><ul><li>Prototypical instance</li><li>Clone</li><ul></td>
-  </tr>
-  <tr>
-    <td><strong>Decorator</strong>: Add features to existing objects dynamically without changing structures</td>
+    <td><strong>Decorator</strong>: Add features to existing objects dynamically without changing structures. This is a <strong>structural pattern</strong>.</td>
     <td></td>
     <td><ul><li>Functions are objects in Py</li><li>Built in decorator feature</li></ul></td>
   </tr>
   <tr>
-    <td><strong>Proxy</strong>: To create a highly resource intensive object</td>
-    <td><ul><li>Postpone object creation unless absolutely necessary</li><li>Find a placeholder</li></ul></td>
-    <td><ul><li>Clients: wait to interact with a proxy</li><li>Proxy: Responsible for creating resource intensive Producer objects</li><li>Producer: resource intensive object</li></ul></td>
-  </tr>
-  <tr>
-    <td><strong>Adapter</strong>: Converts interface of a class to one that client is expecting</td>
+    <td><strong>Adapter</strong>: Converts interface of a class to one that client is expecting. This is a <strong>structural pattern</strong>.</td>
     <td>
     <ul>
       <li>Legacy System Integration: When you need to integrate a legacy system or library with modern code, the Adapter pattern can make the transition smoother. It allows you to wrap the legacy code with an adapter, ensuring it conforms to the expected interface of the new system.</li>
@@ -113,6 +121,38 @@ Design patterns are well known solutions to recurring problems.
     </td>
   </tr>
   <tr>
+    <td><strong>Strategy</strong>: Offers family of interchangeable algorithms for clients. This is a <strong>behavioral pattern</strong>.</td>
+    <td></td>
+    <td>
+      <ul>
+      <li>Abstract strategy with default set of behaviors</li>
+      <li>Concrete strategy with behaviors</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Observer</strong>: Establishes 1:many relationship between a subject and multiple observers. A subject needs to be monitored, and the observers need to be notified when there is a change in the subject. <strong>Singleton pattern</strong> is related to this pattern. This is a <strong>behavioral pattern</strong>.</td>
+    <td></td>
+    <td>
+    <ul>
+      <li>Subject: abstract class that has interface that allows operations like attach, detach, notify</li>
+      <li>Observer</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Prototype</strong>: Useful when instantiating many identical objects could be expensive, instead clone them.</td>
+    <td></td>
+    <td><ul><li>Prototypical instance</li><li>Clone</li></ul></td>
+  </tr>
+
+  <tr>
+    <td><strong>Proxy</strong>: To create a highly resource intensive object</td>
+    <td><ul><li>Postpone object creation unless absolutely necessary</li><li>Find a placeholder</li></ul></td>
+    <td><ul><li>Clients: wait to interact with a proxy</li><li>Proxy: Responsible for creating resource intensive Producer objects</li><li>Producer: resource intensive object</li></ul></td>
+  </tr>
+
+  <tr>
     <td><strong>Composite</strong>: Maintains a tree data structure to represent part whole relationships</td>
     <td></td>
     <td>Recursive data structure with elements having sub elements Menu &rarr; submenu &rarr; subsubmenu <ul><li>Component: Abstract class</li><li>Child: Concrete component class</li><li>Composite: Concrete component class with child objects</li></td>
@@ -122,16 +162,7 @@ Design patterns are well known solutions to recurring problems.
     <td></td>
     <td>Implementation independent and dependant circle abstraction</td>
   </tr>
-  <tr>
-    <td><strong>Observer</strong>: Establishes 1:many relationship between a subject and multiple observers. A subject needs to be monitored, and the observers need to be notified when there is a change in the subject. Singleton is related to this pattern.</td>
-    <td></td>
-    <td>
-    <ul>
-      <li>Subject: abstract class that has interface that allows operations like attach, detach, notify</li>
-      <li>Observer</li>
-    </ul>
-    </td>
-  </tr>
+
   <tr>
     <td><strong>Visitor</strong>: Allows adding new features to existing clas hierarchy without changing it.</td>
     <td></td>
@@ -148,18 +179,9 @@ Design patterns are well known solutions to recurring problems.
     <td>
     </td>
   </tr>
+
   <tr>
-    <td><strong>Strategy</strong>: Offers family of interchangeable algorithms for clients.</td>
-    <td></td>
-    <td>
-      <ul>
-      <li>Abstract strategy with default set of behaviors</li>
-      <li>Concrete strategy with behaviors</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td><strong>Chain of responsibility</strong>: Opens possibilities of processing for a request. It decouples request and its processing. **Composite pattern** is related to this pattern. **Composite pattern** is related to this pattern</td>
+    <td><strong>Chain of responsibility</strong>: Opens possibilities of processing for a request. It decouples request and its processing. <strong>Composite pattern</strong> is related to this pattern. </td>
     <td></td>
     <td>
       <ul>
