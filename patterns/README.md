@@ -79,24 +79,50 @@ but without the implementation</li>
       Now when a new Burger type is added, the FactoryMethod in Creator Interface doesn't change.
     </td>
   </tr>
+
+
   <tr>
-    <td><strong>Singleton</strong>: When you only want one object. Global methods and attributes using objects. This is 
-a <strong>creational pattern</strong>.</td>
+    <td><strong>Singleton</strong>: This is a creational pattern and is used when you only want one instance of a class. 
+For example if we want a shared state globally using objects or only one instance is needed e.g. logger.</td>
+    <td>
+      <ul>
+        <li>Database Connection Pools: Enhancing database interaction efficiency via a unified connection pool.</li>
+        <li>Logger Services: Centralizing application logging through a single logger instance.</li>
+        <li>Configuration Management: Ensuring a solitary configuration manager instance oversees application settings.</li>
+        <li>Hardware Access: Controlling access to hardware resources, such as a printer or sensor, through a single instance.</li>
+      </ul>
+    </td>
     <td>
     <ul>
-      <li>Database Connection Pools: Enhancing database interaction efficiency via a unified connection pool.</li>
-      <li>Logger Services: Centralizing application logging through a single logger instance.</li>
-      <li>Configuration Management: Ensuring a solitary configuration manager instance oversees application settings.</li>
-      <li>Hardware Access: Controlling access to hardware resources, such as a printer or sensor, through a single instance.</li>
+      Singleton Class with:
+      <li>A private static variable of its own type to hold the single instance</li>
+      <li>A private constructor that restricts public instantiation from outside</li>
+      <li>A public static method e.g. getInstance() that returns the unique instance</li>
     </ul>
     </td>
-    <td></td>
   </tr>
+
+
   <tr>
-    <td><strong>Builder</strong>: Solves situation of a telescoping constructor, which occurs when a developer builds a complex object using an excessive number of constructors. This is a <strong>creational pattern</strong>.</td>
+    <td><strong>Builder</strong>: This is a creational pattern that solves situation of a telescoping constructor, which
+occurs when a developer builds a complex object using an excessive number of constructors. For example create a meal 
+object with drink, mains, dessert etc. It has some overlap with the Factory pattern in that it had high level view of say 
+different kinds of meals. But in this case we could have large set of drinks, mains etc. Subclassing and making a new kind 
+of meal for each variation would not be practical and we might want to have some granular control. Also, if there was a new 
+course in the meal, then we would need to update the constructor. IN this Builder pattern we will add what is needed, step by step.</td>
     <td></td>
-    <td><ul><li>Director: in charge of building a product</li><li>Abstract Builder: Interfaces needed to build an object</li><li>Concrete Builder: Inherits from abstract builder and implements the details for the specific product</li><li>Product: An object being built</li></ul></td>
+    <td>
+      <ul>
+        <li>Abstract Builder: Class or interface needed to build a product</li>
+        <li>Concrete Builders: Inherits from abstract builder and implements the details for each specific product</li>
+        <li>Product: An object being built e.g. meal</li>
+        <li>Director: Uses the builder to build a product</li>
+        <li>Director: Uses the builder to build a product</li>
+      </ul>
+    </td>
   </tr>
+
+
   <tr>
     <td><strong>Decorator</strong>: Add features to existing objects dynamically without changing structures. This is a <strong>structural pattern</strong>.</td>
     <td></td>

@@ -9,7 +9,7 @@ class Singleton(Borg):
 	"""The singleton class"""
 
 	def __init__(self, **kwargs):
-		Borg.__init__(self)
+		super().__init__()
 		self._shared_data.update(kwargs) # update attribute dict
 
 	def __str__(self):
