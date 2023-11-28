@@ -122,7 +122,55 @@ Design patterns are well known solutions to recurring problems.
     <td></td>
     <td>Implementation independent and dependant circle abstraction</td>
   </tr>
+  <tr>
+    <td><strong>Observer</strong>: Establishes 1:many relationship between a subject and multiple observers. A subject needs to be monitored, and the observers need to be notified when there is a change in the subject. Singleton is related to this pattern.</td>
+    <td></td>
+    <td>
+    <ul>
+      <li>Subject: abstract class that has interface that allows operations like attach, detach, notify</li>
+      <li>Observer</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Visitor</strong>: Allows adding new features to existing clas hierarchy without changing it.</td>
+    <td></td>
+    <td>
+    <ul>
+      <li>Visitor</li>
+      <li>Location being visited</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Iterator</strong>: Allows a client to have sequential access to aggregate object without exposing underlying structure.</td>
+    <td></td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Strategy</strong>: Offers family of interchangeable algorithms for clients.</td>
+    <td></td>
+    <td>
+      <ul>
+      <li>Abstract strategy with default set of behaviors</li>
+      <li>Concrete strategy with behaviors</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Chain of responsibility</strong>: Opens possibilities of processing for a request. It decouples request and its processing. **Composite pattern** is related to this pattern. **Composite pattern** is related to this pattern</td>
+    <td></td>
+    <td>
+      <ul>
+      <li>Abstract handler: stores a successor that handles the request if the current handler does not handle it</li>
+      <li>Concrete handler: implements checking if it can handle the request</li>
+      </ul>
+    </td>
+  </tr>
 </table>
+
+### How each patterns differ
 
 <table>
   <tr>
