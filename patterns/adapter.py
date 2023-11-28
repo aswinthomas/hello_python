@@ -1,5 +1,5 @@
 class Korean:
-	"""Korean speaker"""
+	"""Incompatible interface: Korean speaker"""
 
 	def __init__(self):
 		self.name = "Korean"
@@ -10,7 +10,7 @@ class Korean:
 
 
 class British:
-	"""British speaker"""
+	"""Incompatible interface: British speaker"""
 
 	def __init__(self):
 		self.name = "British"
@@ -20,15 +20,22 @@ class British:
 		return "Hello!"
 
 
-class Adapter:
+class SpeakerInterface:
+	"""Target Interface"""
+
+	def speak(self):
+		pass
+
+
+class Adapter(SpeakerInterface):
 	"""Changes generic method to individualized"""
 
-	def __init__(self, object, **adapted_method):
+	def __init__(self, object):
 		self._object = object
 
-		# add new dict that establishes mapping
-		self.__dict__.update(adapted_method)
-
-	def __getattr__(self, attr):
-		"""return attributes"""
-		return getattr(self._object, attr)
+	def speak(self):
+		"""Translates the generic method to individualized"""
+		if hasattr(self._object, 'speak_korean'):
+			return self._object.speak_korean()
+		elif hasattr(self._object, 'speak_english'):
+			return self._object.speak_english()

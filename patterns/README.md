@@ -47,17 +47,31 @@ Design patterns are well known solutions to recurring problems.
 <table>
   <tr>
     <th>Pattern</th>
-    <th>When</th>
+    <th>Use cases</th>
     <th>Components</th>
   </tr>
   <tr>
     <td><strong>Factory</strong>: Instead of client code directly creating objects, it delegates responsibility to a Factory Method</td>
-    <td><ul><li>Decoupling client code from concrete classes</li><li>Flexibility of creation of object without specifying exact class</li><li>Extensibility by adding mew product classes</li></ul></td>
+    <ul><li>Decoupling client code from concrete classes</li><li>Flexibility of creation of object without specifying exact class</li><li>Extensibility by adding mew product classes</li></ul>
+    <td>
+    <ul>
+      <li>Library Frameworks: It’s commonly used in library frameworks, allowing developers to extend and customize the behavior of a library.</li>
+      <li>Plug-in Architectures: When building applications with extensible plug-in architectures, the Factory Method pattern simplifies the addition of new plug-ins without modifying existing code.</li>
+      <li>Testing: Factories can be used to create mock objects for unit testing.</li>
+    </ul>
+    </td>
     <td><ul><li>Product Interface: Defines an abstract class or interface for the product</li><li>Concrete Product: Implements concrete Products</li><li>Creator Interface:  Defines an abstract creator class or interface, which is essentially a method to create object of the Products.</li><li>Concrete Creator: Implements the creator, creating an instance of Product</li></ul></td>
   </tr>
   <tr>
     <td><strong>Singleton</strong>: When you only want one object. Global methods and attributes using objects.</td>
-    <td><ul><li>Single Instance</li><li>Global Access</li><li>Resource Management: Helps manage resources that should be shred e.g. db connections</li></ul></td>
+    <td>
+    <ul>
+      <li>Database Connection Pools: Enhancing database interaction efficiency via a unified connection pool.</li>
+      <li>Logger Services: Centralizing application logging through a single logger instance.</li>
+      <li>Configuration Management: Ensuring a solitary configuration manager instance oversees application settings.</li>
+      <li>Hardware Access: Controlling access to hardware resources, such as a printer or sensor, through a single instance.</li>
+    </ul>
+    </td>
     <td></td>
   </tr>
   <tr>
@@ -82,7 +96,54 @@ Design patterns are well known solutions to recurring problems.
   </tr>
   <tr>
     <td><strong>Adapter</strong>: Converts interface of a class to one that client is expecting</td>
+    <td>
+    <ul>
+      <li>Legacy System Integration: When you need to integrate a legacy system or library with modern code, the Adapter pattern can make the transition smoother. It allows you to wrap the legacy code with an adapter, ensuring it conforms to the expected interface of the new system.</li>
+      <li>Third-Party Libraries: When working with third-party libraries or APIs that do not align with your system’s requirements, adapters can serve as intermediaries. They translate the third-party interface into one that your codebase understands.</li>
+      <li>Interface Evolution: As your software evolves, you may encounter situations where the interfaces of existing classes need to change. Adapters can help maintain backward compatibility by presenting the old interface while internally implementing the new one.</li>
+    </ul>
+    </td>
+    <td>
+    Object Adapter takes on interface of one object while wrapping the behavior of other. Class Adapter relies on inheritance, inheriting interfaces form both objects, overriding methods, but only available in C++.
+    <ul>
+      <li>Target Interface: The target interface defines the contract that the client code expects. It is the interface the adapter will conform to, allowing the client to interact with the adaptee seamlessly.</li>
+      <li>Adaptee: The adaptee is the class or component with an incompatible interface. It’s the object you want to make use of but cannot interact with directly from the client. Usually a 3rd party or legacy service.</li>
+      <li>Adapter: The intermediary that bridges the gap between the target interface and the adaptee. It translates calls from the client in a way that the adaptee can understand and respond to.</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Composite</strong>: Maintains a tree data structure to represent part whole relationships</td>
     <td></td>
-    <td>Translate method names</td>
+    <td>Recursive data structure with elements having sub elements Menu &rarr; submenu &rarr; subsubmenu <ul><li>Component: Abstract class</li><li>Child: Concrete component class</li><li>Composite: Concrete component class with child objects</li></td>
+  </tr>
+  <tr>
+    <td><strong>Bridge</strong>: Helps untangle unnecessarily complicated class hierarchy, especially when implementation classes are mixed with implementation independent classes</td>
+    <td></td>
+    <td>Implementation independent and dependant circle abstraction</td>
   </tr>
 </table>
+
+<table>
+  <tr>
+    <th>Adapter Pattern</th>
+    <th>Other Pattern</th>
+  </tr>
+  <tr>
+    <td>Ensures interface compatibility between classes with incompatible interfaces.</td>
+    <td><strong>Bridge:</strong> Separates abstraction from implementation to enable independent variations.</td>
+  </tr>
+  <tr>
+    <td>Ensures interface compatibility through adaptation and translation.</td>
+    <td><strong>Decorator:</strong> Dynamically adds responsibilities to objects without interface changes, often extending functionality at runtime.</td>
+  </tr>
+  <tr>
+    <td>Translates calls to ensure compatibility between interfaces.</td>
+    <td><strong>Proxy:</strong> Controls object access, serving as a protective barrier with a focus on access control and lazy loading.</td>
+  </tr>
+  <tr>
+    <td>Ensures compatibility between existing interfaces without altering source code.</td>
+    <td><strong>Facade:</strong> Simplifies client interactions by providing a unified, higher-level interface to a group of interfaces, focusing on a streamlined experience rather than individual conversions.</td>
+  </tr>
+</table>
+
