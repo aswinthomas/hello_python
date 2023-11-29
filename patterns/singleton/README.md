@@ -1,0 +1,1 @@
+![Alt text](singleton.avif)

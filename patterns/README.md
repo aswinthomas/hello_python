@@ -233,13 +233,24 @@ In our example it can be Lockable and Openable interface that can be used to def
 
 
   <tr>
-    <td><strong>Observer</strong>: Establishes 1:many relationship between a subject and multiple observers. A subject needs to be monitored, and the observers need to be notified when there is a change in the subject. <strong>Singleton pattern</strong> is related to this pattern. This is a <strong>behavioral pattern</strong>.</td>
-    <td></td>
+    <td><strong>Observer</strong>: This is a behavioral pattern that is about notifications. It establishes 1:many 
+relationship between a subject and multiple observers. A subject needs to be monitored, and the observers need to be 
+notified when there is a change in the subject. pub/sub would be a good example and a bad way to do this would be polling.</td>
     <td>
-    <ul>
-      <li>Subject: abstract class that has interface that allows operations like attach, detach, notify</li>
-      <li>Observer</li>
-    </ul>
+      <ul>
+        <li>Home Automation Systems - In a smart home, various devices can act as observers. For instance, a temperature sensor might monitor room temperature. When the temperature crosses a certain threshold, the air conditioning system, an observer, gets activated automatically.</li>
+        <li>Gaming - Achievement Systems - In many video games, players can earn achievements or trophies for completing specific tasks or challenges. The game can use the Observer pattern to monitor various game metrics or player actions. When a particular metric meets the criteria for an achievement, the corresponding observer triggers, granting the player the achievement.</li>
+        <li>Subscription Services - Systems where users can subscribe to receive news, updates, or other information. When new content is available, all subscribed users (observers) receive a notification, such as an email or a push notification.</li>
+        <li>Real-Time Data Monitoring - Applications that monitor real-time data, such as stock market applications, can use the Observer pattern. When the stock price changes, all subscribed clients (observers) are immediately notified and can update their displays or perform other actions.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Subject (Publisher): abstract class that has interface that allows operations like attach/registerObserver, detach/removeObserver, notifyObservers</li>
+        <li>Concrete Subject: Implements the Subject, manages list of observers and the data they are interested in.</li>
+        <li>Observer (Interface/abstract class): This class has the update method that is used to inform observers.</li>
+        <li>Concrete Observer: Implements the observer which has the reference to the Subject and registers itself. It implements the update method.</li>
+      </ul>
     </td>
   </tr>
 

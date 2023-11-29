@@ -1,4 +1,4 @@
-## Simple Python OOP Concepts
+## Basic OOP Concepts
 
 ### Classes
 Classes are templates to create objects to avoid recreating them each time

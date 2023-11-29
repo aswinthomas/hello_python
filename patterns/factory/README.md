@@ -1,0 +1,1 @@
+![Alt text](factory.avif)
