@@ -109,16 +109,46 @@ occurs when a developer builds a complex object using an excessive number of con
 object with drink, mains, dessert etc. It has some overlap with the Factory pattern in that it had high level view of say 
 different kinds of meals. But in this case we could have large set of drinks, mains etc. Subclassing and making a new kind 
 of meal for each variation would not be practical and we might want to have some granular control. Also, if there was a new 
-course in the meal, then we would need to update the constructor. IN this Builder pattern we will add what is needed, step by step.</td>
-    <td></td>
+course in the meal, then we would need to update the constructor. In this Builder pattern we will add what is needed, step by step.</td>
+    <td>
+      <ul>
+        <li>Protocol Buffers - In data serialization, the Builder pattern is employed to construct complex data 
+structures. Protocol buffers define structured data in a simpler, yet efficient way compared to XML or JSON. This enables 
+step-by-step construction of objects, especially handy for nested data structures and handling optional or repeated fields.</li>
+        <li>Meal Order Systems - Different meals might have different components (starters, mains, drinks, desserts) and preparation steps.</li>
+        <li>Video Game Character Creation - The builder pattern is popular in the context of video games which allow 
+crafting a custom character where a player can choose a character's weapons, armor, accessories, and abilities.</li>
+      </ul>
+    </td>
     <td>
       <ul>
         <li>Abstract Builder: Class or interface needed to build a product</li>
         <li>Concrete Builders: Inherits from abstract builder and implements the details for each specific product</li>
         <li>Product: An object being built e.g. meal</li>
         <li>Director: Uses the builder to build a product</li>
-        <li>Director: Uses the builder to build a product</li>
       </ul>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td><strong>Adapter</strong>: This is a structural pattern that converts interface of a class to one that client is 
+expecting. The purpose here is to take two classes and make them compatible. Lets say we have used a JSONLogger in our code 
+everywhere, but now we want to use XMLLogger as well. It would be convenient if both logger had same interface. 
+    <td>
+      <ul>
+        <li>Legacy System Integration: When you need to integrate a legacy system or library with modern code, the Adapter pattern can make the transition smoother. It allows you to wrap the legacy code with an adapter, ensuring it conforms to the expected interface of the new system.</li>
+        <li>Third-Party Libraries: When working with third-party libraries or APIs that do not align with your system’s requirements, adapters can serve as intermediaries. They translate the third-party interface into one that your codebase understands.</li>
+        <li>Interface Evolution: As your software evolves, you may encounter situations where the interfaces of existing classes need to change. Adapters can help maintain backward compatibility by presenting the old interface while internally implementing the new one.</li>
+      </ul>
+    </td>
+    <td>
+    Object Adapter takes on interface of one object while wrapping the behavior of other. Class Adapter relies on inheritance, inheriting interfaces form both objects, overriding methods, but only available in C++.
+    <ul>
+      <li>Target Interface: The target interface defines the contract that the client code expects. It is the interface the adapter will conform to, allowing the client to interact with the adaptee (XMLLogger) seamlessly.</li>
+      <li>Adaptee: The adaptee is the class or component with an incompatible interface. It’s the object you want to make use of but cannot interact with directly from the client. Usually a 3rd party or legacy service.</li>
+      <li>Adapter: The intermediary that bridges the gap between the target interface and the adaptee. It translates calls from the client in a way that the adaptee can understand and respond to.</li>
+    </ul>
     </td>
   </tr>
 
@@ -128,24 +158,8 @@ course in the meal, then we would need to update the constructor. IN this Builde
     <td></td>
     <td><ul><li>Functions are objects in Py</li><li>Built in decorator feature</li></ul></td>
   </tr>
-  <tr>
-    <td><strong>Adapter</strong>: Converts interface of a class to one that client is expecting. This is a <strong>structural pattern</strong>.</td>
-    <td>
-    <ul>
-      <li>Legacy System Integration: When you need to integrate a legacy system or library with modern code, the Adapter pattern can make the transition smoother. It allows you to wrap the legacy code with an adapter, ensuring it conforms to the expected interface of the new system.</li>
-      <li>Third-Party Libraries: When working with third-party libraries or APIs that do not align with your system’s requirements, adapters can serve as intermediaries. They translate the third-party interface into one that your codebase understands.</li>
-      <li>Interface Evolution: As your software evolves, you may encounter situations where the interfaces of existing classes need to change. Adapters can help maintain backward compatibility by presenting the old interface while internally implementing the new one.</li>
-    </ul>
-    </td>
-    <td>
-    Object Adapter takes on interface of one object while wrapping the behavior of other. Class Adapter relies on inheritance, inheriting interfaces form both objects, overriding methods, but only available in C++.
-    <ul>
-      <li>Target Interface: The target interface defines the contract that the client code expects. It is the interface the adapter will conform to, allowing the client to interact with the adaptee seamlessly.</li>
-      <li>Adaptee: The adaptee is the class or component with an incompatible interface. It’s the object you want to make use of but cannot interact with directly from the client. Usually a 3rd party or legacy service.</li>
-      <li>Adapter: The intermediary that bridges the gap between the target interface and the adaptee. It translates calls from the client in a way that the adaptee can understand and respond to.</li>
-    </ul>
-    </td>
-  </tr>
+
+
   <tr>
     <td><strong>Strategy</strong>: Offers family of interchangeable algorithms for clients. This is a <strong>behavioral pattern</strong>.</td>
     <td></td>
