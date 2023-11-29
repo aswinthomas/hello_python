@@ -154,9 +154,58 @@ everywhere, but now we want to use XMLLogger as well. It would be convenient if 
 
 
   <tr>
-    <td><strong>Decorator</strong>: Add features to existing objects dynamically without changing structures. This is a <strong>structural pattern</strong>.</td>
-    <td></td>
-    <td><ul><li>Functions are objects in Py</li><li>Built in decorator feature</li></ul></td>
+    <td><strong>Decorator</strong>: This is a structural pattern that add features to existing objects dynamically without 
+changing structures. In Adapter pattern it was about compatibility, but about adding or changing behavior. Lets say 
+there is a Beverage class, with many methods and attributes. Eventually this becomes a God class. Another approach is 
+turnkey methods inherited like BeverageWithMilk class which has its own problems. Instead a Decorator is used. </td>
+    <td>
+      <ul>
+        <li>Point of Sale Systems - As discussed in our example, point of sale systems can make use of the decorator 
+design pattern to compute the cost of the overall purchase, with discounts and add-ons etc.</li>
+        <li>Graphical User Interfaces - The decorator pattern is very common when adding visual or behavior functionalities 
+to GUI components dynamically. For example, making a window scrollable, adding borders, colors and modifying fonts, 
+etc all can be achieved through decorators.</li>
+        <li>Middleware in Web Development - Implementing middleware to augment request and response objects in web 
+frameworks by adding functionalities like authentication, authorization, logging and error handling.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Component (abstract class or interface): Lets say we have a Beverage abstract class.</li>
+        <li>Concrete component: Implements the Abstract component. The methods here can be altered by decorators. A LightRoast and DarkRoast extends the 
+Beverage class for two types of beans. </li>
+        <li>Decorator (abstract class): An abstract class that extends the Abstract component. In our case lets say its called BeverageDecorator.</li>
+        <li>Concrete Decorator: Implements the decorator. We can now have ExpressoDecorator, CreamDecorator, FoamDecorator 
+that extend BeverageDecorator. Now ExpressoDecorator could wrap DarkRoast (to say add its cost) and CreamDecorator 
+(add another $0.2) and FoamDecorator (add another $0.1)</li>
+      </ul>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td><strong>Facade</strong>: This is a structural pattern that is a wrapper without a very clear purpose unlike Adapter 
+or Decorator. Basically make it simple for clients to use called e.g. API design e.g. like GraphQl where you go through 
+one endpoint and query for specific data you need, as opposed to REST where you request directly to a resource. E.g. in a 
+SmartHome you can expose some presents like movie mode or focus mode as opposed to enabling setting temperature and lights.</td>
+    <td>
+      <ul>
+        <li>API Wrappers - Many times, third-party libraries provide APIs that are very granular or complex. For example, 
+X (formerly Twitter) provides a comprehensive API but it can be cumbersome, especially for those unfamiliar with 
+intricacies of OAuth, endpoints structures. Tweepy is a python library, which acts as a facade, simplifying authentication and the process of sending tweets.</li>
+        <li>GUI Libraries - Complex GUI libraries can have intricate setups for creating windows, shapes etc. A facade 
+might be used to allow the developers to make simplified calls to abstract these details, allowing developers to create UI elements with simple method calls.</li>
+        <li>Database Access using ORM - Instead of writing raw SQL queries, developers can use high-level methods to retrieve, insert or update records. 
+For example, a piece of code like user = DB.get_record('users', 5) abstracts away the details of forming the SQL query, 
+executing the query, fetching the result and handling potential errors.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>SubSystem classes: The classes that the facade aims to simplify for the client. They house in tricate details like setBrightness()For example a SmartHomeSystem</li>
+        <li>Facade: Serves as a gateway as a higher level interface, encapsulating complexities. For example a SmartHomeFacade that uses the SmartHomeSystem and maybe other systems as well</li>
+      </ul>
+    </td>
   </tr>
 
 
