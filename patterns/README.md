@@ -202,7 +202,7 @@ executing the query, fetching the result and handling potential errors.</li>
     </td>
     <td>
       <ul>
-        <li>SubSystem classes: The classes that the facade aims to simplify for the client. They house in tricate details like setBrightness()For example a SmartHomeSystem</li>
+        <li>SubSystem classes: The classes that the facade aims to simplify for the client. For example a SmartHomeSystem has intricate details like setBrightness() </li>
         <li>Facade: Serves as a gateway as a higher level interface, encapsulating complexities. For example a SmartHomeFacade that uses the SmartHomeSystem and maybe other systems as well</li>
       </ul>
     </td>
@@ -210,15 +210,28 @@ executing the query, fetching the result and handling potential errors.</li>
 
 
   <tr>
-    <td><strong>Strategy</strong>: Offers family of interchangeable algorithms for clients. This is a <strong>behavioral pattern</strong>.</td>
-    <td></td>
+    <td><strong>Strategy</strong>: This is a behavioral pattern that offers a family of algorithms/behaviors that can be 
+extended and used to change behavior at runtime. Inheritance is good for sharing behaviors, but when there needs to be both 
+shared and differing behaviors for say a method, we can use strategy pattern.</td>
     <td>
       <ul>
-      <li>Abstract strategy with default set of behaviors</li>
-      <li>Concrete strategy with behaviors</li>
+        <li>Payment Processing Systems - any system where users can choose to pay with credit card, PayPal, Bitcoin etc.</li>
+        <li>Travel Routes - We can customize our routes when traveling. For example, we might choose a route without highways, the shortest route, or the fastest route. Each of these routes have different strategies.</li>
+        <li>Shipping Options - Each shipping method has its own category and its own strategy for determining cost and delivery time.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Context (Navigator Class): Instead of determining the behaviors directly through conditions, it delegates the 
+responsibility to Strategy. This allows the Context (e.g. Door) to change behavior dynamically. There could be Doors like SlidingDoor that extends the Door.</li>
+        <li>Strategy Interface: Abstract class for all strategies. In general it could have some variation of execute() method. 
+In our example it can be Lockable and Openable interface that can be used to define locking and opening door behaviors.</li>
+        <li>Concrete strategy: Implements each strategy</li>
       </ul>
     </td>
   </tr>
+
+
   <tr>
     <td><strong>Observer</strong>: Establishes 1:many relationship between a subject and multiple observers. A subject needs to be monitored, and the observers need to be notified when there is a change in the subject. <strong>Singleton pattern</strong> is related to this pattern. This is a <strong>behavioral pattern</strong>.</td>
     <td></td>
@@ -229,6 +242,8 @@ executing the query, fetching the result and handling potential errors.</li>
     </ul>
     </td>
   </tr>
+
+
   <tr>
     <td><strong>Prototype</strong>: Useful when instantiating many identical objects could be expensive, instead clone them.</td>
     <td></td>
