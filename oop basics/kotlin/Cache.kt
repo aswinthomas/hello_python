@@ -10,6 +10,12 @@ import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.ConcurrentMap
 import kotlin.math.max
 
+/*
+Create a Kotlin program that demonstrates advanced OOP concepts, specifically generics, delegation, and extension functions.
+You will implement a generic cache system that can store various types of data and a logging mechanism using
+delegation.
+ */
+
 // Logger interface for delegation
 interface Logger {
     fun log(message: String)

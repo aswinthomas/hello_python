@@ -2,6 +2,11 @@ package com.aswindev.training.oop
 
 import java.lang.Exception
 
+/*
+Define an interface to abstract the concept of communication.
+This allows for different implementations of communication (like email, SMS, etc.).
+ */
+
 // interface (Abstraction)
 interface Communicator {
     fun send()
