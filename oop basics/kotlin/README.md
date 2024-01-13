@@ -16,8 +16,7 @@ class Person(val name: String, var age: Int) {
 ```
 
 ## Principles of OOP
-1. Encapsulation
-Encapsulation involves bundling the data and the methods that operate on the data within one unit. This restricts direct access to some of the object's components, which is a means of preventing accidental interference and misuse of the methods and data. In Kotlin, this is achieved using visibility modifiers like private, protected, etc.
+1. **Encapsulation:** Encapsulation involves bundling the data and the methods that operate on the data within one unit. This restricts direct access to some of the object's components, which is a means of preventing accidental interference and misuse of the methods and data. In Kotlin, this is achieved using visibility modifiers like private, protected, etc.
 
 ```kotlin
 class Account(private var balance: Double) {
@@ -33,8 +32,7 @@ class Account(private var balance: Double) {
 }
 ```
 
-2. Abstraction
-Abstraction means hiding the complex reality while exposing only the necessary parts. It helps in reducing programming complexity and effort. In Kotlin, this is achieved using abstract classes and interfaces.
+1. **Abstraction:** Abstraction means hiding the complex reality while exposing only the necessary parts. It helps in reducing programming complexity and effort. In Kotlin, this is achieved using abstract classes and interfaces.
 
 ```kotlin
 interface Communicator {
@@ -48,8 +46,7 @@ class EmailCommunicator : Communicator {
 }
 ```
 
-3. Inheritance
-Inheritance is a mechanism where a new class is derived from an existing class. The new class is called a subclass, and the existing class is known as the superclass. It facilitates code reuse and can lead to an improvement in the logical structure of the code. Kotlin supports single inheritance from classes but can implement multiple interfaces.
+1. **Inheritance:** Inheritance is a mechanism where a new class is derived from an existing class. The new class is called a subclass, and the existing class is known as the superclass. It facilitates code reuse and can lead to an improvement in the logical structure of the code. Kotlin supports single inheritance from classes but can implement multiple interfaces.
 
 ```kotlin
 open class Vehicle(val make: String, val model: String)
@@ -57,8 +54,7 @@ open class Vehicle(val make: String, val model: String)
 class Car(make: String, model: String, val doors: Int) : Vehicle(make, model)
 ```
 
-4. Polymorphism
-Polymorphism allows objects to be treated as instances of their parent class rather than their actual class. This means a single entity (method or object) can take on various forms. In Kotlin, polymorphism is achieved through method overriding (runtime polymorphism) and method overloading (compile-time polymorphism).
+1. **Polymorphism:** Polymorphism allows objects to be treated as instances of their parent class rather than their actual class. This means a single entity (method or object) can take on various forms. In Kotlin, polymorphism is achieved through method overriding (runtime polymorphism) and method overloading (compile-time polymorphism).
 
 ```kotlin
 open class Shape {
